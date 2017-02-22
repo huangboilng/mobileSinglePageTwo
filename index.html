@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title>麦考瑞大学 CEO总裁班</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="js/jquery.min.js"></script>    
+</head>
+<body class="default-bg" id="default-bg">
+	<img src="images/topbg.png">
+	<div class="container-fluid">
+		<div class="yidiv"><p class="yip">挑战自我,迈向成功！</p><br/><p class="erp">赢取总裁班课程。</p></div>
+		<p class="sanp">报名登记</p>
+		<p class="sip">系列活动的第一讲将于10月2号晚上6:30-8:30进行。6:15分开始入场登记</p>
+		<p class="wup">活动地点:</p>
+		<p class="liup">Level 32, 85 Castlereagh Street Sydney (JP Morgan building)</p>
+		<p class="liup">咨询电话：02 8279 6088</p>
+		<p class="liup">联系人：Sherry Cui</p>
+		<p class="liup">邮箱：info@viggroup.com.au</p>
+		<div class="row box1" id="box1">
+		  <p class="qip">报名截止时间9月30日下午5点。</p>
+		  <p class="qip">*请填写准确的联系方式，以便我们通知后续活动细节。</p>
+		  <form role="form"  class="form-horizontal">
+			  <div class="form-group">
+				<label for="exampleInputname"  class="col-sm-3 control-label">姓名:</label>
+				<div class="col-sm-9">
+					<input type="name" class="form-control" id="exampleInputname" placeholder="姓名">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="exampleInputemail" class="col-sm-3 control-label">邮箱:</label>
+				<div class="col-sm-9">
+					<input type="email" class="form-control" id="exampleInputemail" placeholder="邮箱">
+				</div>	
+			  </div>
+			  <div class="form-group">
+				<label for="exampleInputphone" class="col-sm-3 control-label">手机号码:</label>
+				<div class="col-sm-9">
+					<input type="phone" class="form-control" id="exampleInputphone" placeholder="手机号码">
+				</div>	
+			  </div>
+		  </form>
+	</div>
+		<p class="bap">报名截止时间9月30日下午5点。</p>
+		<p class="bap">*请填写准确的联系方式，以便我们通知后续活动细节。</p>
+		<button type="button" class="btn btn-danger" id="gzymbut">提交</button>
+	</div> 
+
+
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+$(document).ready(function(){
+$("#gzymbut").click(function(){
+	var tcyi1 = $("#exampleInputname").val(), tcyi2 = $("#exampleInputemail").val(), tcyi3 = $("#exampleInputphone").val();    
+	var re = new RegExp(/^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/);  
+    var myreg =/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/; 	
+	var falg = 1;
+	if(tcyi1 == ''){
+		alert("请填写姓名！");$("#exampleInputname").focus();falg = 0; return false;
+	}	
+	
+	if(tcyi2 == ""){
+		alert("邮箱不能为空"); $("#exampleInputemail").focus(); falg = 0; return false;
+	}else if(!myreg .test(tcyi2)){
+		alert("请填写正确的邮箱!"); $("#exampleInputemail").focus(); falg = 0; return false;
+	} 
+		                  
+	if(tcyi3 == ""){
+		alert("电话不能为空"); $("#exampleInputphone").focus();falg = 0;return false;
+	}else if(isNaN(tcyi3)){
+		alert("电话号码必须为数值"); $("#exampleInputphone").focus();falg = 0;return false;
+	}
+
+	var data = {}; data.name= tcyi1 ? tcyi1 : '';data.email= tcyi2 ? tcyi2 : '';
+		 data.phone=  tcyi3 ? tcyi3 : '';
+	if(falg){ 
+		$.post("http://www.sydneytoday.com/mapi/userinfo/userinsert", {name : data.name,email:data.email,phone:data.phone},
+		  function(json){
+			  alert(json);
+		 });	
+	}else{
+		alert("请填写正确完整信息！");
+		return false;
+	}
+});
+});
+
+</script>
+</body>
+</html>

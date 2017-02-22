@@ -1,0 +1,52 @@
+/* CSS Document */
+body{width: 100%;margin: 0 auto; font-family:"microsoft yahei","ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",  "Helvetica Neue", Helvetica, Arial,simhei, sans-serif; font-size:14px; }
+img{max-width:100%}
+.imgtop{ background:url(../images/topbg.png) no-repeat; background-attachment:scroll;
+	background-size:100% 100%;
+	-moz-background-size: 100% 100%;  
+	-o-background-size: 100% 100%;  
+	-webkit-background-size: 100% 100%; 
+	margin:0 auto; 
+	height:275px;
+}
+p{margin: 1em 0;}
+.container-fluid{
+	color:#1d2359;
+	font-weight:bold;
+	background:url(../images/bg.png) repeat;
+	background-attachment:scroll;
+	background-size:100% 100%;
+	-moz-background-size: 100% 100%;  
+	-o-background-size: 100% 100%;  
+	-webkit-background-size: 100% 100%;  
+	margin:0 auto;
+	position:relative;
+	height:1100px;
+	max-height:1200px;
+	padding-left:.9em;
+}
+.yidiv{ font-size:2em; text-shadow:4px 3px 2px #9da197; display: inline-block; width: 100%;}
+.yip{float:left;margin: .8em 0 .3em 0;}
+.erp{ float:right;margin: .3em 0;}
+.sanp{font-size:2em; margin:0;}
+.sip{font-size: 1.2em;}
+.wup{font-size:1.4em;}
+.bap{color: #eba050;text-align: center;text-shadow: 1.2px -1px 0px #333;font-size: 1.3em;font-weight: 300;/* -webkit-text-fill-color: #eba050;-webkit-text-stroke: 1px #333;*/}
+#box1{letter-spacing: 1px;padding-left:15px; padding-right:15px;font-size: 1.3em;line-height: 30px; border:2px solid #eda95e; margin-left: 0px; width:98%;margin-top: 1.6em;}
+label{font-weight:bold; }
+#gzymbut{background:url(../images/but.png) no-repeat;background: url(../images/but.png) no-repeat;
+	display: inherit;
+	width: 220px;
+	height: 58px;
+	margin: 0 auto;
+	margin-top: 1em;
+	margin-right: -15px;
+	border: none;
+	font-size: 28px;
+	text-indent: 54px;
+	letter-spacing: 16px;
+}
+
+@media (min-width:640px) {
+	.default-bg{ width:640px;}
+}
